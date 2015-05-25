@@ -20,11 +20,7 @@ class String
 	def first_vowel_index
 		i = 0
 		while i < self.size
-			if (self[i].is_vowel)
-				return i
-			else
-				i += 1
-			end
+			self[i].is_vowel ? return i : i += 1
 		end
 	end
 end
@@ -45,8 +41,15 @@ def piglatinify(string)
 
 		string[0] = string[0].upcase! if need_to_cap
 	end
-
 	string
+end
+
+def piglatinify_sentance(sentance)
+	array = sentance.split(" ")
+	array.map do |word|
+		piglatinify(word)
+	end
+	sentance = array.join(" ")
 end
 
 
@@ -54,6 +57,6 @@ puts piglatinify("egg")
 puts piglatinify("trust")
 puts piglatinify("igloo")
 puts piglatinify("Ruby")
-
+puts piglatinify_sentance("Fuck You Blake")
 
 
