@@ -43,10 +43,6 @@ def filter_by_name(array_of_hashes, name)
 	array
 end
 
-def filter(array_of_hashes)
-  array = []
-  
-end
 
 puts filter_by_name(people, "ski")
 
